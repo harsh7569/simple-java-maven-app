@@ -50,7 +50,7 @@
   <distributionManagement>
    <snapshotRepository>
       <id>maven-snapshots</id>
-      <url>http://harsh75691c.mylabserver.com:8081/repository/maven-public/</url>
+      <url>http://harsh75691c.mylabserver.com:8081/repository/maven-snapshots/</url>
    </snapshotRepository>
 </distributionManagement>
 </project>
