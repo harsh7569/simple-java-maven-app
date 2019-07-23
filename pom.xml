@@ -50,7 +50,7 @@
   <distributionManagement>
    <snapshotRepository>
       <id>nexus-snapshots</id>
-      <url>http://harsh75691c.mylabserver.com:8081/repository/Dummy/</url>
+      <url>http://harsh75691c.mylabserver.com:8081/repository/maven-central/</url>
    </snapshotRepository>
 </distributionManagement>
 </project>
