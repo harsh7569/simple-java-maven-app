@@ -49,8 +49,8 @@
   </build>
   <distributionManagement>
    <snapshotRepository>
-      <id>nexus-snapshots</id>
-      <url>http://harsh75691c.mylabserver.com:8081/repository/Dummy/</url>
+      <id>maven-snapshots</id>
+      <url>http://harsh75691c.mylabserver.com:8081/repository/maven-public/</url>
    </snapshotRepository>
 </distributionManagement>
 </project>
