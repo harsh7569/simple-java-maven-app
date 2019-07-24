@@ -17,8 +17,8 @@
   </dependencies>
   
   <scm>
-    <connection>scm:git@github.com:harsh7569/simple-java-maven-app.git</connection>
-    <developerConnection>scm:git@github.com:harsh7569/simple-java-maven-app.git</developerConnection>
+    <connection>scm:git:git@github.com:harsh7569/simple-java-maven-app.git</connection>
+    <developerConnection>scm:git:git@github.com:harsh7569/simple-java-maven-app.git</developerConnection>
     <url>https://github.com/harsh7569</url>
   </scm>
   
