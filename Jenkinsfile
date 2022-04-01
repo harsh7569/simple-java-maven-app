@@ -5,7 +5,7 @@ pipeline {
     }
 
     stages {
-        stage('Build') {
+        stage('BUILD') {
             steps {
                 echo 'Building..'
                 echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
@@ -13,7 +13,7 @@ pipeline {
                 sh 'mvn -B -DskipTests clean package'
             }
         }
-        stage('Test') {
+        stage('TEST') {
             steps {
                 echo 'Testing..'
                 sh ' mvn test'
@@ -24,7 +24,7 @@ pipeline {
                 }
             }
         }
-        stage('Deploy') {
+        stage('DEPLOY') {
             steps {
                 echo 'Deploying....'
                 sh './jenkins/scripts/deliver.sh'
