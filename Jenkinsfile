@@ -1,11 +1,9 @@
-pipeline {
-    agent any
-    tools {
-        maven '3.8.5'
-    }
-    docker { 
+pipeline{
+    agent {
+        docker { 
             image 'python'
             args '-e SOOS_CLIENT_ID=${SOOS_CLIENT_ID} -e SOOS_API_KEY=${SOOS_API_KEY}'
+        }
     }
     environment {
 
@@ -44,7 +42,6 @@ pipeline {
         SOOS_API_BASE_URL="https://api.soos.io/api/"
 
     }
-    
     stages{
         stage("Test"){
             steps{
@@ -107,31 +104,3 @@ pipeline {
         }
     }
 }
-
-    stages {
-        stage('BUILD') {
-            steps {
-                echo 'Building..'
-                echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
-                sh 'mvn --version'
-                sh 'mvn -B -DskipTests clean package'
-            }
-        }
-        stage('TEST') {
-            steps {
-                echo 'Testing..'
-                sh ' mvn test'
-            }
-            post {
-                always {
-                    junit 'target/surefire-reports/*.xml'
-                }
-            }
-        }
-        stage('DEPLOY') {
-            steps {
-                echo 'Deploying....'
-                sh './jenkins/scripts/deliver.sh'
-            }
-        }
-    }
