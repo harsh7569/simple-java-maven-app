@@ -15,6 +15,7 @@ pipeline {
                 sh 'mvn clean package sonar:sonar'
                 }
             }
+        }
         
         stage('TEST') {
             steps {
