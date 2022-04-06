@@ -11,7 +11,7 @@ pipeline {
                 echo 'Building..'
                 echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
                 sh 'mvn --version'
-               withSonarQubeEnv(installationName: 'SonarScannerToken', credentialsId: 'SonarToken') {
+               withSonarQubeEnv(installationName: 'SonarScanner', credentialsId: 'SonarToken') {
                 sh 'mvn clean package sonar:sonar'
                 }
             }
