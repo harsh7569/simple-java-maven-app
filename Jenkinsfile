@@ -71,6 +71,7 @@ pipeline {
                     }
                 }
             }
+        }
             
         stage('DEPLOY') {
             steps {
@@ -78,5 +79,5 @@ pipeline {
                 sh './jenkins/scripts/deliver.sh'
             }
         }
-    }
+     }
   }
