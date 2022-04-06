@@ -5,7 +5,8 @@ pipeline {
     }
 
     stages {
-        stage ('SCAN & BUILD') {
+        
+        stage('SCAN & BUILD') {
             steps {
                 echo 'Building..'
                 echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
