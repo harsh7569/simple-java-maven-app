@@ -5,12 +5,13 @@ pipeline {
     }
 
     stages {
-        stage('BUILD') {
+        stage('SCAN & BUILD') {
             steps {
                 echo 'Building..'
                 echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
                 sh 'mvn --version'
-                sh 'mvn -B -DskipTests clean package'
+                withSonarQubeEnv(installationName: 'SonarScannerToken', credentialsId: 'SonarToken')
+                sh 'mvn -B -DskipTests clean package sonar:sonar'
             }
         }
         stage('TEST') {
